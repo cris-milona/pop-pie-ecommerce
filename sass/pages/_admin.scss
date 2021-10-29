@@ -1,0 +1,131 @@
+.admin {
+  min-height: 73vh;
+
+  background-color: $color-primary-light;
+
+  &__heading {
+    text-align: center;
+    padding: 2rem;
+  }
+}
+
+.container-admin {
+  display: flex;
+
+  padding-bottom: 8rem;
+}
+
+.create-form {
+  flex: 0 0 50%;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 2rem;
+
+    & > * {
+      box-sizing: content-box;
+      padding: 0.5rem;
+      width: 60%;
+
+      font-family: $ff-sans-serif;
+    }
+
+    & input,
+    & select {
+      border: none;
+      padding: 1.5rem;
+
+      border-radius: 0.5rem;
+    }
+  }
+  &__btn {
+    margin-top: 2rem;
+    border: $color-secondary-dark;
+    padding: 2rem;
+  }
+}
+
+.search-form {
+  flex: 0 0 50%;
+  justify-self: center;
+
+  &__form {
+    padding: 4rem;
+
+    & input {
+      width: 60%;
+      border: none;
+      padding: 1.5rem;
+
+      font-family: $ff-sans-serif;
+
+      border-radius: 0.5rem;
+    }
+  }
+}
+
+.product-result {
+  padding: 2rem;
+
+  & > * {
+    padding: 0.5rem;
+  }
+
+  &__btn {
+    padding: 0.8rem;
+  }
+}
+
+.admin-messages {
+  text-align: center;
+}
+
+//media queries
+@media screen and (max-width: $bp-3840) {
+  .admin {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: $bp-1200) {
+  .container-admin {
+    flex-direction: column;
+    gap: 2rem;
+    padding-bottom: 5rem;
+  }
+
+  .search-form {
+    &__form {
+      & input {
+        width: 70%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $bp-940) {
+  .create-form {
+    padding: 1.5rem;
+    &__form {
+      padding: 0;
+
+      & > * {
+        width: 85%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $bp-707) {
+  .search-form {
+    padding: 1.5rem;
+
+    & input {
+      width: 50%;
+    }
+  }
+}

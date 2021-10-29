@@ -1,0 +1,288 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 12vh;
+  z-index: 1000;
+  background-color: $color-primary;
+  padding: 0 4em;
+
+  font-size: 1.7rem;
+
+  box-shadow: 0 1rem 1rem rgba($color-tertiary-dark, 0.3);
+}
+
+.header-logo-box {
+  flex: 0 0 10%;
+  height: 50%;
+
+  &__img {
+    height: 100%;
+  }
+}
+
+.navbar {
+  flex: 0 0 90%;
+  text-align: end;
+
+  &__link-box {
+    display: inline-block;
+
+    & li {
+      display: inline-block;
+
+      margin: 0 1em;
+      padding: 0.5em 1em;
+
+      &:hover,
+      &link,
+      &:visited,
+      &:active {
+        text-shadow: 0.6px 0.5px $color-secondary-dark;
+      }
+
+      &:active {
+        transform: scale(0.97);
+      }
+    }
+  }
+
+  &__user-box {
+    display: inline-block;
+
+    text-align: start;
+    margin-left: 3em;
+  }
+}
+
+.user-box {
+  &__text {
+    max-width: 14ch;
+
+    line-height: 1.2;
+  }
+
+  &__logout {
+    margin-top: 0.8em;
+  }
+
+  &__admin-btn {
+    margin-top: 0.8em;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 15vh;
+  background-color: $color-secondary-dark;
+  padding: 0 4em;
+}
+
+.footer-logo-box {
+  flex: 0 0 10%;
+  height: 50%;
+
+  &__img {
+    height: 100%;
+  }
+}
+
+.footer-info {
+  flex: 0 0 90%;
+  text-align: end;
+
+  &__social {
+    text-align: end;
+
+    & svg {
+      max-width: 3rem;
+      max-height: 3rem;
+      margin: 1em;
+    }
+  }
+
+  &__links,
+  &__copyright {
+    display: inline-block;
+
+    & a {
+      margin: 0.5em;
+      color: $color-primary;
+      letter-spacing: 0.2rem;
+
+      &:link,
+      &:active,
+      &:visited {
+        color: $color-primary;
+      }
+    }
+
+    & p {
+      text-align: end;
+
+      display: inline;
+      color: $color-primary;
+    }
+  }
+}
+
+#flaticon {
+  text-align: end;
+  font-size: 1.3rem;
+  & a {
+    color: $color-tertiary-dark;
+  }
+}
+
+//media queries
+//header
+@media screen and (max-width: $bp-1420) {
+  .header {
+    padding: 0 1em;
+  }
+  .navbar {
+    &__link-box {
+      & li {
+        padding: 0rem;
+        margin: 0 0.6em;
+      }
+    }
+    &__user-box {
+      margin-left: 0em;
+    }
+  }
+}
+
+@media only screen and (max-width: $bp-1200) {
+  .user-box {
+    &__text {
+      margin-left: auto;
+    }
+    &__admin-btn {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+@media screen and (max-width: $bp-707) {
+  .header-logo-box {
+    height: 40%;
+  }
+}
+
+@media screen and (max-width: $bp-450) {
+  .header-logo-box {
+    height: 30%;
+  }
+}
+
+//footer
+@media screen and (max-width: $bp-850) {
+  .footer {
+    height: fit-content;
+    padding: 1em;
+  }
+  .footer-info {
+    &__links,
+    &__copyright {
+      & a {
+        &:link,
+        &:active,
+        &:visited {
+          letter-spacing: 0;
+        }
+      }
+      & p {
+        display: block;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $bp-707) {
+  .footer {
+    height: fit-content;
+    padding: 0.1em;
+  }
+}
+@media screen and (max-width: $bp-450) {
+  .footer {
+    height: 15vh;
+  }
+}
+
+//header-dropdown menu
+.navbar {
+  &__checkbox {
+    display: none;
+  }
+  &__menu-btn,
+  &__cancel-btn {
+    display: none;
+
+    height: 1.5em;
+    width: 1.5em;
+
+    margin-right: 1.5em;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: $bp-940) {
+  #navbar__full {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: $color-primary;
+    top: 100px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+
+    & ul li {
+      display: block;
+      margin: 30px 0;
+      line-height: 20px;
+    }
+
+    .navbar__user-box {
+      display: block;
+      text-align: center;
+      margin-left: 0em;
+    }
+  }
+
+  .user-box__text {
+    margin: 0 auto;
+  }
+
+  .navbar {
+    flex: 0 0 10%;
+
+    &__menu-btn {
+      display: block;
+    }
+
+    &__checkbox:checked ~ #navbar__full {
+      left: 0;
+    }
+
+    &__checkbox:checked ~ label .navbar__menu-btn {
+      display: none;
+    }
+
+    &__checkbox:checked ~ label .navbar__cancel-btn {
+      display: block;
+    }
+  }
+}
+//end of dropdown menu

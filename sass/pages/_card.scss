@@ -1,0 +1,133 @@
+.container-product-card {
+  min-height: 73vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-card {
+  display: grid;
+  grid-template-areas:
+    'title description'
+    'img description'
+    'img price'
+    'img quantity'
+    '. button';
+  grid-column-gap: 5rem;
+  grid-row-gap: 2rem;
+
+  justify-items: end;
+  align-items: end;
+
+  background-color: $color-primary-dark;
+  padding: 5rem;
+
+  &__title {
+    grid-area: title;
+
+    max-width: 15ch;
+  }
+
+  &__img {
+    grid-area: img;
+  }
+
+  &__description {
+    grid-area: description;
+
+    max-width: 35ch;
+  }
+
+  &__radio {
+    grid-area: price;
+
+    & input {
+      margin: 2rem;
+    }
+  }
+
+  &__quantity {
+    grid-area: quantity;
+
+    & input {
+      width: 4rem;
+      height: 3rem;
+      border: none;
+      padding-left: 1rem;
+      background-color: $color-secondary-light;
+      box-shadow: 0 0.5rem 0.5rem rgba($color-secondary, 0.4);
+    }
+  }
+
+  &__btn {
+    grid-area: button;
+
+    width: 250px;
+  }
+}
+
+//media queries
+@media screen and (max-width: $bp-3840) {
+  .container-product-card {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: $bp-940) {
+  .product-card {
+    grid-column-gap: 2rem;
+    grid-row-gap: 0.5rem;
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: $bp-707) {
+  .product-card {
+    grid-template-areas:
+      'title title'
+      'description description'
+      'img price'
+      'img quantity'
+      '. button';
+
+    justify-items: start;
+    margin: 1rem;
+
+    &__title {
+      grid-area: title;
+
+      max-width: 35ch;
+    }
+
+    &__img {
+      grid-area: img;
+      height: 100%;
+    }
+
+    &__description {
+      grid-area: description;
+
+      max-width: 70ch;
+    }
+
+    &__radio {
+      grid-area: price;
+      justify-self: end;
+
+      & input {
+        margin: 0.5rem;
+      }
+    }
+
+    &__quantity {
+      grid-area: quantity;
+      justify-self: end;
+    }
+
+    &__btn {
+      grid-area: button;
+      justify-self: end;
+    }
+  }
+}

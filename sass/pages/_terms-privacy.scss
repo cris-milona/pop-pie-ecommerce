@@ -1,0 +1,25 @@
+.terms {
+  min-height: 73vh;
+  padding: 6rem;
+}
+
+.terms-container {
+  margin: 0 auto;
+
+  &__heading {
+    text-align: center;
+  }
+  &__text {
+    max-width: 80ch;
+    padding-block: 2rem;
+    margin: 0 auto;
+  }
+}
+
+//media queries
+@media screen and (max-width: $bp-3840) {
+  .terms {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+}

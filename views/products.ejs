@@ -1,0 +1,78 @@
+<%- include('partials/head') -%>
+<body>
+  <%- include('partials/header') -%>
+  <main class="products">
+    <div class="navigation">
+      <ul class="navigation-list">
+        <li><a href="/products?page=1" data-category-link>All</a></li>
+        <li>
+          <a href="/products?category=fruit&page=1" data-category-link
+            >Fruit Pies</a
+          >
+        </li>
+        <li>
+          <a href="/products?category=sweet&page=1" data-category-link
+            >Sweet Pies</a
+          >
+        </li>
+        <li>
+          <a href="/products?category=savory&page=1" data-category-link
+            >Savory Pies</a
+          >
+        </li>
+        <li>
+          <a href="/products?category=vegan&page=1" data-category-link
+            >Vegan Pies</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="container-grid-products">
+      <div class="grid">
+        <% products.forEach((product) => { %>
+        <div class="product-box" data-product-box="<%= product._id %>">
+          <img
+            src="data:image/jpg;base64,<%=product.image.toString('base64')%>"
+            alt="image of <%=product.title%>"
+            class="product-box__img"
+            data-img-product-id="<%=product._id%>"
+          />
+          <div class="product-info">
+            <h4 class="product-info__heading"><%=product.title%></h4>
+            <p class="product-info__price">$<%=product.priceS%></p>
+          </div>
+          <button
+            class="product-box__btn btn-solid"
+            data-product-btn
+            data-btn-product-id="<%=product._id%>"
+          >
+            Add to cart
+          </button>
+        </div>
+        <%});%>
+      </div>
+      <div class="pagination">
+        <% if (page !== 1) {%>
+        <button class="pagination__arrows" data-pagination-previous>
+          &laquo;
+        </button>
+        <% } %> <% for (let i=1; i <= numberOfPages; i++) { %> <% if (category
+        === null) { %>
+        <a href="/products?page=<%= i %>" class="pagination__numbers"
+          ><%= i %>
+        </a>
+        <% } else { %>
+        <a
+          href="/products?category=<%= category %>&page=<%= i %>"
+          class="pagination__numbers"
+          ><%= i %>
+        </a>
+        <% } %> <% } %> <% if (page !== numberOfPages ) { %>
+        <button class="pagination__arrows" data-pagination-next>&raquo;</button>
+        <% } %>
+      </div>
+    </div>
+  </main>
+  <%- include('partials/footer') -%>
+</body>

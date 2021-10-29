@@ -1,0 +1,95 @@
+<%- include('partials/head') -%>
+<body>
+  <%- include('partials/header') -%>
+  <main class="contact">
+    <div class="container-heading-box">
+      <h2 class="container-heading-box__heading">Contact us</h2>
+      <h2 class="container-heading-box__heading">Follow us</h2>
+      <h2 class="container-heading-box__heading">Meet us</h2>
+    </div>
+    <div class="container-form-box">
+      <form action="" class="container-form-box__form">
+        <input type="text" name="contact-name" placeholder="Name" />
+        <input type="text" name="contact-surname" placeholder="Surname" />
+        <input type="text" name="contact-email" placeholder="E-mail" />
+        <textarea
+          name="contact-textarea"
+          id="contact-textarea"
+          cols="50"
+          rows="10"
+          class="container-form-box__textarea"
+          placeholder="Type your message here..."
+        ></textarea>
+        <button class="container-form-box__btn btn-solid">Send message</button>
+      </form>
+    </div>
+    <div class="container-social">
+      <div class="social-left">
+        <p class="social-left__text">
+          <span>
+            <svg class="social-left__svg">
+              <use href="/img/icomoon/sprite.svg#icon-twitter"></use>
+            </svg>
+          </span>
+          &nbsp; #pop_pie
+        </p>
+
+        <p class="social-left__text">
+          <span>
+            <svg class="social-left__svg">
+              <use href="/img/icomoon/sprite.svg#icon-instagram"></use>
+            </svg>
+          </span>
+          &nbsp; @pop_pie
+        </p>
+      </div>
+      <div class="social-right">
+        <p class="social-right__text">
+          <span>
+            <svg class="social-right__svg">
+              <use href="/img/icomoon/sprite.svg#icon-envelop"></use>
+            </svg>
+          </span>
+          &nbsp; mail@poppie.com
+        </p>
+      </div>
+    </div>
+    <div class="container-store">
+      <div class="store">
+        <p class="store__text">
+          <span>
+            <svg class="store__svg">
+              <use href="/img/icomoon/sprite.svg#icon-compass2"></use>
+            </svg>
+          </span>
+          Kamarner str.
+        </p>
+
+        <p class="store__text">
+          <span>
+            <svg class="store__svg">
+              <use href="/img/icomoon/sprite.svg#icon-open"></use>
+            </svg>
+          </span>
+          Mon-Fri 10.00 - 15.00
+        </p>
+        <p class="store__text">
+          <span>
+            <svg class="store__svg">
+              <use href="/img/icomoon/sprite.svg#icon-phone"></use>
+            </svg>
+          </span>
+          + 5698754452
+        </p>
+      </div>
+    </div>
+    <div class="container-img">
+      <img
+        src="img/bakey_pinar-kucuk-3.jpg"
+        alt="bakery inside"
+        class="contact__img-img"
+      />
+    </div>
+  </main>
+  <%- include('partials/footer') -%>
+</body>

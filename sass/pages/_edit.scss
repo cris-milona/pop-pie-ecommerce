@@ -1,0 +1,22 @@
+.edit {
+  min-height: 73vh;
+  background-color: $color-primary-light;
+
+  &__heading {
+    text-align: center;
+    padding-top: 1rem;
+  }
+}
+
+.create-form {
+  width: 70%;
+  margin: 0 auto;
+}
+
+//media queries
+@media screen and (max-width: $bp-3840) {
+  .edit {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,103 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-3840) {
+    font-size: 72%; //11.52px
+  }
+  //mobile font-size - minimum
+  @media screen and (max-width: $bp-450) {
+    font-size: 55%; //8.8px
+  }
+}
+
+body {
+  box-sizing: border-box;
+  font-family: $ff-sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: $color-tertiary-dark;
+  background-color: $color-primary;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+
+  &:link,
+  &:active,
+  &:visited {
+    color: currentColor;
+  }
+
+  // ::-moz-focus-inner {
+  //   border: 0;
+  // }
+}
+
+.focuslink:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+p {
+  font-family: $ff-sans-serif;
+  font-size: 1.6rem;
+  color: $color-tertiary-dark;
+}
+
+h1 {
+  font-family: $ff-serif;
+  font-size: 4.5rem;
+  line-height: 1.05em;
+  @media screen and (max-width: $bp-940) {
+    font-size: 3.5rem;
+  }
+}
+
+h2 {
+  font-family: $ff-serif;
+  color: $color-tertiary-dark;
+  font-size: 3.6rem;
+  line-height: 1.25em;
+  @media screen and (max-width: $bp-940) {
+    font-size: 3rem;
+  }
+}
+
+h3 {
+  font-family: $ff-serif;
+  color: $color-tertiary-dark;
+  font-size: 2.8rem;
+  line-height: 1.25em;
+  @media screen and (max-width: $bp-940) {
+    font-size: 2.5rem;
+  }
+}
+
+h4 {
+  font-family: $ff-serif;
+  color: $color-tertiary-dark;
+  font-size: 1.8rem;
+  line-height: 1.22em;
+}
+
+.active {
+  text-shadow: 0.6px 0.5px $color-secondary-dark;
+}

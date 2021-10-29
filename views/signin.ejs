@@ -1,0 +1,17 @@
+<%- include('partials/head') -%>
+<body>
+  <%- include('partials/header') -%>
+  <main class="credentials">
+    <div class="credentials-container">
+      <form action="/signin" method="POST">
+        <input type="text" name="email" placeholder="e-mail" required />
+        <input type="text" name="password" placeholder="password" required />
+        <button class="btn">Sign in</button>
+        <% if (error) { %>
+        <p><%=error%></p>
+        <% } %>
+      </form>
+    </div>
+  </main>
+  <%- include('partials/footer') -%>
+</body>

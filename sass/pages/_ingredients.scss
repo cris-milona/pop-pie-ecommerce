@@ -1,0 +1,141 @@
+.suppliers {
+  background-color: $color-primary-light;
+  padding-bottom: 1em;
+
+  &__heading {
+    grid-area: 1/1/2/-1;
+    justify-self: center;
+    text-align: center;
+    padding-top: 1em;
+  }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: $color-primary;
+  margin: 2em 2em 0 2em;
+
+  &__img {
+    &--3 {
+      height: 100%;
+    }
+  }
+
+  &__text {
+    align-self: center;
+    text-align: center;
+    padding: 0 2rem;
+  }
+}
+
+//media queries
+@media screen and (max-width: $bp-3840) {
+  .suppliers {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: $bp-940) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      'img1 text1 img2'
+      'text2 img3 text3'
+      'img4 text4 img5'
+      'text5 img6 text6';
+
+    &__img--1 {
+      grid-area: img1;
+    }
+    &__img--2 {
+      grid-area: img2;
+    }
+    &__img--3 {
+      grid-area: img3;
+    }
+    &__img--4 {
+      grid-area: img4;
+      height: 100%;
+    }
+    &__img--5 {
+      grid-area: img5;
+    }
+    &__img--6 {
+      grid-area: img6;
+    }
+
+    &__text--1 {
+      grid-area: text1;
+    }
+    &__text--2 {
+      grid-area: text2;
+    }
+    &__text--3 {
+      grid-area: text3;
+    }
+    &__text--4 {
+      grid-area: text4;
+    }
+    &__text--5 {
+      grid-area: text5;
+    }
+    &__text--6 {
+      grid-area: text6;
+    }
+  }
+}
+
+@media screen and (max-width: $bp-707) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      'img1 text1'
+      'text2 img2'
+      'img3 text3'
+      'text4 img4'
+      'img5 text5'
+      'text6 img6';
+
+    &__img--1 {
+      grid-area: img1;
+      height: 100%;
+    }
+    &__img--2 {
+      grid-area: img2;
+    }
+    &__img--3 {
+      grid-area: img3;
+    }
+    &__img--4 {
+      grid-area: img4;
+      height: 100%;
+    }
+    &__img--5 {
+      grid-area: img5;
+    }
+    &__img--6 {
+      grid-area: img6;
+    }
+
+    &__text--1 {
+      grid-area: text1;
+    }
+    &__text--2 {
+      grid-area: text2;
+    }
+    &__text--3 {
+      grid-area: text3;
+    }
+    &__text--4 {
+      grid-area: text4;
+    }
+    &__text--5 {
+      grid-area: text5;
+    }
+    &__text--6 {
+      grid-area: text6;
+    }
+  }
+}

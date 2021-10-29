@@ -1,0 +1,74 @@
+.credentials {
+  min-height: 73vh;
+  background-image: linear-gradient(
+      to top,
+      rgba($color-secondary-dark, 0.3),
+      rgba($color-secondary-dark, 0.2)
+    ),
+    url('/img/flour2_duncan-kidd.jpg');
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.credentials-container {
+  box-shadow: 0 1rem 1rem rgba($color-secondary-dark, 0.3);
+  width: 35%;
+  margin: 0 auto;
+
+  & form {
+    padding: 4rem 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    & > * {
+      width: 80%;
+      border: none;
+      padding: 1em;
+      border-radius: 3px;
+    }
+  }
+
+  & input {
+    background-color: $color-primary-light-1;
+  }
+
+  & button {
+    background-color: $color-secondary;
+
+    &:hover,
+    &:active {
+      background-color: $color-secondary-dark;
+      color: $color-primary;
+      cursor: pointer;
+    }
+
+    &:active {
+      transform: scale(0.97);
+    }
+  }
+}
+
+//media queries
+@media screen and (max-width: $bp-3840) {
+  .credentials {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: $bp-940) {
+  .credentials-container {
+    width: 45%;
+  }
+}
+
+@media only screen and (max-width: $bp-707) {
+  .credentials-container {
+    width: 55%;
+  }
+}

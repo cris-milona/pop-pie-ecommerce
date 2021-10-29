@@ -1,0 +1,311 @@
+//hero section
+.hero {
+  min-height: 88vh;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-secondary-dark, 0.93) 40%,
+      rgba($color-secondary, 0.9)
+    ),
+    url('/img/hero_kristaps-grundsteins.jpg');
+  background-position: right bottom;
+
+  &__heading {
+    grid-area: 5/2/6/9;
+    color: $color-secondary-light;
+  }
+
+  &__text {
+    grid-area: 6/2/7/7;
+    color: $color-secondary-light;
+  }
+
+  &__btn {
+    grid-area: 6/8/7/11;
+    align-self: center;
+    justify-self: start;
+
+    font-size: 1.7rem;
+  }
+}
+
+//favorites section
+.favorites {
+  min-height: 70vh;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+
+  &__previous {
+    grid-area: 5/1/6/2;
+    justify-self: center;
+    align-self: center;
+
+    cursor: pointer;
+  }
+
+  &__next {
+    grid-area: 5/-2/6/-1;
+    justify-self: center;
+    align-self: center;
+
+    cursor: pointer;
+  }
+}
+
+.slide-box {
+  grid-area: 2/2/-2/-2;
+  display: flex;
+
+  opacity: 0;
+
+  transition: opacity 0.6s;
+
+  &--1 {
+    align-items: center;
+    justify-content: center;
+
+    opacity: 1;
+  }
+
+  &__heading--1 {
+    letter-spacing: 0.5rem;
+  }
+}
+
+.slide-box-left {
+  flex-basis: 35%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__heading {
+    font-style: italic;
+    line-height: 1.8;
+
+    &--1,
+    &--2,
+    &--3 {
+      max-width: 28ch;
+      padding-bottom: 3rem;
+    }
+  }
+
+  &__text {
+    max-width: 40ch;
+
+    font-weight: 700;
+    line-height: 1.8;
+  }
+}
+
+.slide-box-right {
+  flex-basis: 65%;
+
+  & img {
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+.dot-box {
+  grid-area: 10/5/-1/7;
+  justify-self: center;
+  align-items: center;
+
+  display: flex;
+  justify-content: space-evenly;
+
+  width: 80%;
+
+  &__dot {
+    display: inline-block;
+    width: 0.8em;
+    height: 0.8em;
+    background-color: $color-tertiary;
+
+    border-radius: 50%;
+    cursor: pointer;
+
+    &--1 {
+      background-color: $color-tertiary-dark;
+    }
+  }
+}
+
+//ingredients section
+.ingredients {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+
+  padding: 2em;
+}
+
+.imgbox {
+  flex-basis: 20%;
+  align-self: center;
+
+  max-height: 90%;
+}
+
+.textbox {
+  flex-basis: 80%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+
+  padding: 0 1em;
+
+  &__heading {
+    margin-bottom: 3rem;
+  }
+
+  &__text {
+    max-width: 110ch;
+  }
+
+  &__link {
+    margin-top: 2em;
+
+    line-height: 2rem;
+    text-decoration: underline;
+  }
+}
+
+//orders section
+.orders {
+  min-height: 40vh;
+  display: flex;
+  justify-content: space-around;
+
+  background-color: $color-primary-light;
+}
+
+.division {
+  flex-basis: 33%;
+
+  min-height: fit-content;
+  align-self: center;
+
+  margin: 4em 0;
+  padding: 0 2em;
+
+  &__heading {
+    font-weight: 400;
+  }
+
+  &__text {
+    margin-top: 0.5rem;
+
+    font-weight: 300;
+    line-height: 1.7;
+    font-style: italic;
+  }
+}
+
+.vl {
+  max-height: 15em;
+  margin-top: 4em;
+
+  border: none;
+  box-shadow: 0.2rem 0 0 $color-tertiary-dark;
+}
+
+//media queries
+@media screen and (max-width: $bp-3840) {
+  .hero,
+  .favorites,
+  .ingredients,
+  .orders {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: $bp-1420) {
+  .favorites {
+    min-height: 55vh;
+  }
+  .ingredients {
+    min-height: 40vh;
+  }
+  .orders {
+    min-height: 30vh;
+  }
+  .vl {
+    max-height: 10em;
+  }
+}
+
+@media only screen and (max-width: $bp-850) {
+  .slide-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .slide-box-left {
+    &__heading {
+      &--1,
+      &--2,
+      &--3 {
+        padding-bottom: 1rem;
+      }
+    }
+  }
+
+  .slide-box-right {
+    & img {
+      height: 70%;
+    }
+  }
+
+  .imgbox {
+    flex-basis: 25%;
+    margin-left: 1.5rem;
+  }
+  .orders {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+  }
+  .division {
+    flex-basis: 23%;
+    margin: 0;
+    width: 80%;
+    &__text {
+      margin-bottom: 1em;
+    }
+  }
+  .vl {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $bp-707) {
+  .hero {
+    align-items: end;
+    &__heading {
+      grid-area: 3/2/4/10;
+    }
+
+    &__text {
+      grid-area: 4/2/5/10;
+    }
+
+    &__btn {
+      grid-area: 6/5/7/10;
+    }
+  }
+  .imgbox {
+    display: none;
+  }
+}

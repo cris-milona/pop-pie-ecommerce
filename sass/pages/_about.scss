@@ -1,0 +1,42 @@
+.about {
+  min-height: 73vh;
+}
+
+.img-box {
+  max-height: 30vh;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.content-box {
+  text-align: center;
+
+  margin: 2rem auto;
+  padding: 1.5rem 3rem;
+
+  &__heading {
+    margin: 1rem;
+  }
+
+  &__text {
+    margin-bottom: 1.5rem;
+    max-width: 75ch;
+    margin: 0 auto;
+    padding-top: 1.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+//media queries
+@media screen and (max-width: $bp-3840) {
+  .about {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: $bp-940) {
+  .content-box {
+    max-width: 60ch;
+  }
+}

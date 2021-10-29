@@ -1,0 +1,59 @@
+<header class="header">
+  <div class="header-logo-box">
+    <img src="/img/logo_2.png" alt="poppie logo" class="header-logo-box__img" />
+  </div>
+  <nav class="navbar">
+    <input type="checkbox" id="check" class="navbar__checkbox" />
+    <label for="check" class="navbar__menu">
+      <img
+        src="/img/flaticon/001-menu.png"
+        alt="menu-bar"
+        class="navbar__menu-btn"
+      />
+
+      <img
+        src="/img/flaticon/002-multiply.png"
+        alt="exit-sign"
+        class="navbar__cancel-btn"
+      />
+    </label>
+    <div id="navbar__full">
+      <ul class="navbar__link-box">
+        <li><a href="/" data-nav-link>Home</a></li>
+        <li><a href="/about" data-nav-link>About us</a></li>
+        <li><a href="/contact" data-nav-link>Contact us</a></li>
+        <li><a href="/ingredients" data-nav-link>Ingredients</a></li>
+        <li><a href="/products?page=1" data-nav-link>Our Pies</a></li>
+        <li><a href="/cart">Cart</a></li>
+      </ul>
+      <% if (user) { %>
+      <div class="navbar__user-box">
+        <p class="user-box__text">
+          Welcome <strong><%= user.username %></strong>
+        </p>
+
+        <% if (user.role === 'admin') { %>
+        <a href="/admin/panel" class="user-box__admin-btn"
+          ><button class="btn-transparent">Admin Panel</button></a
+        >
+        <% } %>
+        <button
+          class="btn-transparent user-box__logout"
+          data-navbar-user-logout
+        >
+          Logout
+        </button>
+      </div>
+      <% } else { %>
+      <div class="navbar__user-box">
+        <button class="btn-transparent user-box__btn" data-signin-btn>
+          Sign in
+        </button>
+        <button class="user-box__btn btn-transparent" data-signup-btn>
+          Sign up
+        </button>
+      </div>
+      <% } %>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,71 @@
+<%- include('partials/head') -%>
+<body>
+  <%- include('partials/header') -%>
+  <main class="cart">
+    <div class="container-cart">
+      <% if (cartArray.length > 0) { %>
+      <div class="container-products">
+        <h3 class="container-products__heading">Your shopping cart</h3>
+        <% cartArray.forEach((product) => { %>
+        <div class="cart-product-box" data-cart-item="<%=product._id%>">
+          <img
+            src="data:image/jpg;base64, <%=product.image.toString('base64')%>"
+            alt="product image"
+            class="cart-product-box__img"
+          />
+          <h4 class="cart-product-box__heading"><%=product.title%></h4>
+          <p
+            class="cart-product-box__price"
+            data-cart-product-price="<%=product.price%>"
+          >
+            $&nbsp;<%=product.price%>
+          </p>
+          <div class="cart-product-box__quantity">
+            <label for="cart-quantity">Quantity</label>
+            <input
+              type="number"
+              id="cart-quantity"
+              name="cart-quantity"
+              value="<%=product.quantity%>"
+            />
+          </div>
+          <p class="cart-product-box__sum" data-cart-product-sum></p>
+          <button
+            class="cart-product-box__btn"
+            data-cart-delete="<%=product._id%>"
+          >
+            Remove item
+          </button>
+        </div>
+        <% }) %>
+      </div>
+      <div class="container-checkout">
+        <div class="cart-checkout">
+          <h4 class="cart-checkout__heading">Order summary</h4>
+          <div class="cart-checkout__numbers">
+            <p>Subtotal:</p>
+            <p data-cart-checkout-subtotal></p>
+          </div>
+          <div class="cart-checkout__numbers">
+            <p>Taxes:</p>
+            <p data-cart-checkout-taxes></p>
+          </div>
+          <div class="cart-checkout__numbers">
+            <p>Total:</p>
+            <p data-cart-checkout-total></p>
+          </div>
+
+          <button type="submit" class="cart-checkout__btn btn-transparent">
+            Checkout
+          </button>
+        </div>
+      </div>
+    </div>
+    <% } else { %>
+    <div class="container-cart-empty">
+      <h3 class="container-cart-empty__heading">Your cart is empty</h3>
+    </div>
+    <% } %>
+  </main>
+  <%- include('partials/footer') -%>
+</body>
