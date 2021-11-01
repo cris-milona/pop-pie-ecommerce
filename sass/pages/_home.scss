@@ -258,11 +258,8 @@
         padding-bottom: 1rem;
       }
     }
-  }
-
-  .slide-box-right {
-    & img {
-      height: 70%;
+    &__text {
+      font-weight: normal;
     }
   }
 
@@ -307,5 +304,11 @@
   }
   .imgbox {
     display: none;
+  }
+}
+
+@media screen and (max-width: $bp-450) {
+  .ingredients {
+    padding: 0;
   }
 }

@@ -309,7 +309,7 @@ h4 {
 }
 @media screen and (max-width: 28.125em) {
   .footer {
-    height: 15vh;
+    height: fit-content;
   }
 }
 .navbar__checkbox {
@@ -329,7 +329,7 @@ h4 {
     width: 100%;
     height: 100vh;
     background-color: #faa919;
-    top: 100px;
+    top: 12vh;
     left: -100%;
     text-align: center;
     transition: all 0.5s;
@@ -569,9 +569,8 @@ h4 {
   .slide-box-left__heading--1, .slide-box-left__heading--2, .slide-box-left__heading--3 {
     padding-bottom: 1rem;
   }
-
-  .slide-box-right img {
-    height: 70%;
+  .slide-box-left__text {
+    font-weight: normal;
   }
 
   .imgbox {
@@ -616,6 +615,11 @@ h4 {
 
   .imgbox {
     display: none;
+  }
+}
+@media screen and (max-width: 28.125em) {
+  .ingredients {
+    padding: 0;
   }
 }
 .about {
@@ -1198,7 +1202,7 @@ h4 {
     justify-self: end;
   }
   .cart-product-box__quantity input {
-    width: 3rem;
+    width: 5rem;
     height: 2rem;
   }
   .cart-product-box__price {
@@ -1254,12 +1258,12 @@ h4 {
 }
 @media only screen and (max-width: 58.75em) {
   .credentials-container {
-    width: 45%;
+    width: 50%;
   }
 }
 @media only screen and (max-width: 44.1875em) {
   .credentials-container {
-    width: 55%;
+    width: 75%;
   }
 }
 .container-product-card {
@@ -1337,7 +1341,7 @@ h4 {
   }
   .product-card__img {
     grid-area: img;
-    height: 100%;
+    width: 100%;
   }
   .product-card__description {
     grid-area: description;
