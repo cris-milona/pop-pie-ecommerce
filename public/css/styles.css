@@ -9,7 +9,7 @@
 html {
   font-size: 62.5%;
 }
-@media only screen and (max-width: 240em) {
+@media screen and (min-width: 240em) {
   html {
     font-size: 72%;
   }
@@ -221,7 +221,7 @@ h4 {
 }
 
 .footer-info {
-  flex: 0 0 90%;
+  flex-basis: 90%;
   text-align: end;
 }
 .footer-info__social {
@@ -534,7 +534,7 @@ h4 {
   box-shadow: 0.2rem 0 0 #493323;
 }
 
-@media screen and (max-width: 240em) {
+@media screen and (min-width: 240em) {
   .hero,
 .favorites,
 .ingredients,
@@ -621,6 +621,11 @@ h4 {
   .ingredients {
     padding: 0;
   }
+
+  .textbox__link {
+    align-self: end;
+    margin: 1.5em;
+  }
 }
 .about {
   min-height: 73vh;
@@ -648,7 +653,7 @@ h4 {
   margin-bottom: 2rem;
 }
 
-@media screen and (max-width: 240em) {
+@media screen and (min-width: 240em) {
   .about {
     max-width: 1920px;
     margin: 0 auto;
@@ -771,7 +776,7 @@ h4 {
   grid-area: 1/14/3/21;
 }
 
-@media screen and (max-width: 240em) {
+@media screen and (min-width: 240em) {
   .contact {
     max-width: 1920px;
     margin: 0 auto;
@@ -908,7 +913,7 @@ h4 {
   padding: 0 1rem;
 }
 
-@media screen and (max-width: 240em) {
+@media screen and (min-width: 240em) {
   .products {
     max-width: 1920px;
     margin: 0 auto;
@@ -961,7 +966,7 @@ h4 {
   padding: 0 2rem;
 }
 
-@media screen and (max-width: 240em) {
+@media screen and (min-width: 240em) {
   .suppliers {
     max-width: 1920px;
     margin: 0 auto;
@@ -1152,7 +1157,7 @@ h4 {
   text-align: center;
 }
 
-@media screen and (max-width: 240em) {
+@media screen and (min-width: 240em) {
   .container-cart {
     max-width: 1920px;
     margin: 0 auto;
@@ -1250,7 +1255,7 @@ h4 {
   transform: scale(0.97);
 }
 
-@media screen and (max-width: 240em) {
+@media screen and (min-width: 240em) {
   .credentials {
     max-width: 1920px;
     margin: 0 auto;
@@ -1316,7 +1321,7 @@ h4 {
   width: 250px;
 }
 
-@media screen and (max-width: 240em) {
+@media screen and (min-width: 240em) {
   .container-product-card {
     max-width: 1920px;
     margin: 0 auto;
@@ -1380,7 +1385,7 @@ h4 {
   margin: 0 auto;
 }
 
-@media screen and (max-width: 240em) {
+@media screen and (min-width: 240em) {
   .terms {
     max-width: 1920px;
     margin: 0 auto;
@@ -1455,7 +1460,7 @@ h4 {
   text-align: center;
 }
 
-@media screen and (max-width: 240em) {
+@media screen and (min-width: 240em) {
   .admin {
     max-width: 1920px;
     margin: 0 auto;
@@ -1505,7 +1510,7 @@ h4 {
   margin: 0 auto;
 }
 
-@media screen and (max-width: 240em) {
+@media screen and (min-width: 240em) {
   .edit {
     max-width: 1920px;
     margin: 0 auto;

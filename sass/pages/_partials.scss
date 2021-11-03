@@ -97,7 +97,7 @@
 }
 
 .footer-info {
-  flex: 0 0 90%;
+  flex-basis: 90%;
   text-align: end;
 
   &__social {
@@ -191,6 +191,7 @@
     height: fit-content;
     padding: 1em;
   }
+
   .footer-info {
     &__links,
     &__copyright {

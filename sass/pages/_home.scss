@@ -219,7 +219,7 @@
 }
 
 //media queries
-@media screen and (max-width: $bp-3840) {
+@media screen and (min-width: $bp-3840) {
   .hero,
   .favorites,
   .ingredients,
@@ -310,5 +310,12 @@
 @media screen and (max-width: $bp-450) {
   .ingredients {
     padding: 0;
+  }
+
+  .textbox {
+    &__link {
+      align-self: end;
+      margin: 1.5em;
+    }
   }
 }
