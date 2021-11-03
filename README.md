@@ -1,26 +1,15 @@
 # pop-pie-ecommerce
 
-What the project does
-Why the project is useful
-How users can get started with the project
-Where users can get help with your project
-Who maintains and contributes to the project
+This web-site was created by Christina Milona and Kostas Christou (https://github.com/26fromthebar) and it is a first attempt to put together part of the knowledge we have acquired on front and back end web-development.
 
-This is a website we have created along with  and is a web-site using Node.Js with express server and EJS as a template engine. JavaScript was used for the front-end with the Axios library for API requests, MongoDB for the created database and SASS as a CSS extension language.
+It was built using:
 
-For the sake of example, you will see that the displayed products are pies, but of course it could be anything else.
+- Node.Js with express server
+- MongoDB for the creation of the database
+- EJS as a template engine for server side rendering
+- JavaScript with Axios library for HTTP requests
+- SASS as a CSS preprocessor.
 
-Node npm modules used 
-bcryptjs
-connect-mongo
-ejs
-express
-express-session
-method-override
-mongoose
-multer
-path
-sharp
-validator
+It is an e-commerce multi-page website where the user can navigate to all pages and choose products to add to the cart either as a guest or as an authenticated user. There is also an administrator role that can create, read, update or delete products on the database through an admin panel.
 
-
+You can find it deployed at https://pop-pie-ecommerce.herokuapp.com/
