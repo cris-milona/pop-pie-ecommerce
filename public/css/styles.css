@@ -30,6 +30,10 @@ body {
   background-color: #faa919;
 }
 
+main {
+  min-height: 75vh;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -186,6 +190,9 @@ h4 {
 .navbar__link-box li:active {
   transform: scale(0.97);
 }
+.navbar__link-box li a {
+  padding: 1em 0.5em;
+}
 .navbar__user-box {
   display: inline-block;
   text-align: start;
@@ -207,14 +214,14 @@ h4 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 15vh;
+  min-height: 13vh;
   background-color: #35495c;
-  padding: 0 4em;
+  padding: 1em 4em;
 }
 
 .footer-logo-box {
   flex: 0 0 10%;
-  height: 50%;
+  max-width: 10rem;
 }
 .footer-logo-box__img {
   height: 100%;
@@ -398,12 +405,14 @@ h4 {
   grid-area: 5/1/6/2;
   justify-self: center;
   align-self: center;
+  padding: 2em;
   cursor: pointer;
 }
 .favorites__next {
   grid-area: 5/-2/6/-1;
   justify-self: center;
   align-self: center;
+  padding: 2em;
   cursor: pointer;
 }
 
@@ -627,14 +636,13 @@ h4 {
     margin: 1.5em;
   }
 }
-.about {
-  min-height: 73vh;
-}
-
 .img-box {
   max-height: 30vh;
-  object-fit: cover;
   overflow: hidden;
+}
+.img-box img {
+  width: 100%;
+  object-fit: cover;
 }
 
 .content-box {
@@ -665,10 +673,9 @@ h4 {
   }
 }
 .contact {
-  min-height: 73vh;
   display: grid;
   grid-template-columns: repeat(20, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 1fr 0.5fr 0.75fr;
 }
 
 .container-heading-box {
@@ -685,7 +692,7 @@ h4 {
 
 .container-form-box {
   grid-area: 1/1/3/14;
-  background-color: #cca33e;
+  background-color: hsl(43deg, 58%, 52%);
 }
 .container-form-box__form {
   width: 80%;
@@ -718,7 +725,7 @@ h4 {
 
 .container-social {
   grid-area: 3/1/4/14;
-  background-color: #ddb955;
+  background-color: hsl(44deg, 67%, 60%);
   display: flex;
 }
 
@@ -755,7 +762,7 @@ h4 {
 
 .container-store {
   grid-area: 3/14/4/21;
-  background-color: #bc9738;
+  background-color: hsl(43deg, 54%, 48%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -830,7 +837,6 @@ h4 {
   }
 }
 .products {
-  min-height: 73vh;
   display: flex;
   justify-content: space-between;
 }
@@ -1060,7 +1066,6 @@ h4 {
   }
 }
 .container-cart {
-  min-height: 73vh;
   display: flex;
   padding: 2em;
   background-color: #be8d2e;
@@ -1125,6 +1130,7 @@ h4 {
   border: none;
   background-color: transparent;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .cart-checkout {
@@ -1215,7 +1221,6 @@ h4 {
   }
 }
 .credentials {
-  min-height: 73vh;
   background-image: linear-gradient(to top, rgba(53, 73, 92, 0.3), rgba(53, 73, 92, 0.2)), url("/img/flour2_duncan-kidd.jpg");
   display: flex;
   align-items: center;
@@ -1255,6 +1260,11 @@ h4 {
   transform: scale(0.97);
 }
 
+.error-message {
+  color: maroon;
+  font-weight: 600;
+}
+
 @media screen and (min-width: 240em) {
   .credentials {
     max-width: 1920px;
@@ -1272,7 +1282,6 @@ h4 {
   }
 }
 .container-product-card {
-  min-height: 73vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1369,7 +1378,6 @@ h4 {
   }
 }
 .terms {
-  min-height: 73vh;
   padding: 6rem;
 }
 
@@ -1392,7 +1400,6 @@ h4 {
   }
 }
 .admin {
-  min-height: 73vh;
   background-color: #f8e2c6;
 }
 .admin__heading {
@@ -1497,7 +1504,6 @@ h4 {
   }
 }
 .edit {
-  min-height: 73vh;
   background-color: #f8e2c6;
 }
 .edit__heading {
@@ -1515,9 +1521,6 @@ h4 {
     max-width: 1920px;
     margin: 0 auto;
   }
-}
-.error {
-  min-height: 73vh;
 }
 .error > * {
   text-align: center;

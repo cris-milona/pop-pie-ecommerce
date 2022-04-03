@@ -17,21 +17,19 @@ router.post('/products/cart', authUser, async (req, res) => {
       req.session.cartArray = [];
     }
     req.session.cartArray.push(cartProduct);
-    res.send('The product has been added to the cart');
+    res.status(200).send('The product has been added to the cart');
   } catch (e) {
-    res.status(404).send(e);
+    res.status(500).send(e.message);
   }
 });
 
 //delete a product from the cart
 router.delete('/products/cart', authUser, async (req, res) => {
   try {
-    const product = await Product.findById(req.body.id);
-    const index = req.session.cartArray.indexOf(product);
-    req.session.cartArray.splice(index, 1);
-    res.send('deleted');
+    req.session.cartArray.splice(req.body.index, 1);
+    res.status(200).send('Product deleted');
   } catch (e) {
-    res.status(404).send(e);
+    res.status(500).send(e.message);
   }
 });
 
@@ -83,7 +81,7 @@ router.get('/products', authUser, async (req, res) => {
       });
     }
   } catch (e) {
-    res.status(404).send(e);
+    res.status(500).send(e.message);
   }
 });
 
@@ -91,9 +89,9 @@ router.get('/products', authUser, async (req, res) => {
 router.get('/products/:id', authUser, async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
-    res.render('card', { product, user: req.user });
+    res.status(200).render('card', { product, user: req.user });
   } catch (e) {
-    res.status(404).send(e);
+    res.status(500).send(e.message);
   }
 });
 

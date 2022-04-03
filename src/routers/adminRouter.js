@@ -19,7 +19,7 @@ const upload = multer({
 
 //admin panel page
 router.get('/admin/panel', authAdmin, (req, res) => {
-  res.render('adminPanel', {
+  res.status(200).render('adminPanel', {
     user: req.user,
     products: [],
     message: null,
@@ -27,7 +27,7 @@ router.get('/admin/panel', authAdmin, (req, res) => {
 });
 
 //add someone as admin
-router.get('/admin/add', authAdmin, (req, res) => {});
+// router.get('/admin/add', authAdmin, (req, res) => {});
 
 //create product by admin
 router.post(
@@ -48,10 +48,11 @@ router.post(
       await product.save();
       const message = `${product.title} succesfully added to cart`;
       req.session.message = message;
-      // res.redirect('/admin/panel');
-      res.render('adminPanel', { user: req.user, products: [], message });
+      res
+        .status(201)
+        .render('adminPanel', { user: req.user, products: [], message });
     } catch (e) {
-      res.status(404).send(e);
+      res.status(503).send(e.message);
     }
   }
 );
@@ -62,9 +63,9 @@ router.delete('/admin/product/remove', authAdmin, async (req, res) => {
     const prodToRemove = await Product.findByIdAndDelete(req.body.id);
     const message = `${prodToRemove.title} is succesfully deleted from the db`;
     req.session.message = message;
-    res.send('ok');
+    res.status(200).send('Product deleted');
   } catch (e) {
-    res.status(404).send(e);
+    res.status(503).send(e);
   }
 });
 
@@ -75,8 +76,7 @@ router.post('/admin/product/search', authAdmin, async (req, res) => {
       const message =
         'There is no product matching your query. Please try again';
       req.session.message = message;
-      // return res.redirect('/admin/panel');
-      return res.render('adminPanel', {
+      return res.status(404).render('adminPanel', {
         user: req.user,
         products: [],
         message,
@@ -91,20 +91,20 @@ router.post('/admin/product/search', authAdmin, async (req, res) => {
       if (products.length === 0) {
         const message = 'The product name does not exist';
         req.session.message = message;
-        // return res.redirect('/admin/panel');
-        return res.render('adminPanel', {
+        return res.status(404).render('adminPanel', {
           user: req.user,
           products: [],
           message,
         });
       } else {
         req.session.products = products;
-        // return res.redirect('/admin/panel');
-        res.render('adminPanel', { user: req.user, products, message: null });
+        res
+          .status(200)
+          .render('adminPanel', { user: req.user, products, message: null });
       }
     }
   } catch (e) {
-    res.status(404).send(e);
+    res.status(503).send(e.message);
   }
 });
 
@@ -112,9 +112,9 @@ router.post('/admin/product/search', authAdmin, async (req, res) => {
 router.get('/admin/edit/:id', authAdmin, async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
-    res.render('edit', { product, user: req.user });
+    res.status(200).render('edit', { product, user: req.user });
   } catch (e) {
-    res.status(404).send(e);
+    res.status(503).send(e.message);
   }
 });
 
@@ -128,9 +128,9 @@ router.put('/admin/edit/:id', authAdmin, async (req, res) => {
     product.priceL = parseInt(req.body.priceL);
     product.category = req.body.category;
     await product.save();
-    res.render('card', { product, user: req.user });
+    res.status(200).render('card', { product, user: req.user });
   } catch (e) {
-    res.status(404).send(e);
+    res.status(503).send(e);
   }
 });
 

@@ -1,5 +1,4 @@
 .container-cart {
-  min-height: 73vh;
   display: flex;
 
   padding: 2em;
@@ -84,6 +83,7 @@
     background-color: transparent;
 
     text-decoration: underline;
+    cursor: pointer;
   }
 }
 

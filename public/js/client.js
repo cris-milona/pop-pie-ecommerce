@@ -161,7 +161,6 @@ if (addToCartBtns.length > 0) {
         await axios.post('/products/cart', { id, price, quantity });
       }
 
-      //change that refactor/////////////////
       alert('product added to cart');
     });
   });
@@ -193,11 +192,9 @@ if (previousProductsBtn) {
 
 //delete a product from the cart
 if (cartDeleteBtns.length > 0) {
-  cartDeleteBtns.forEach((cartDeleteBtn) => {
+  cartDeleteBtns.forEach((cartDeleteBtn, index) => {
     cartDeleteBtn.addEventListener('click', async () => {
-      const idToDelete = cartDeleteBtn.dataset.cartDelete;
-      await axios.delete('/products/cart', { data: { id: idToDelete } });
-      document.querySelector(`[data-cart-item="${idToDelete}"]`).remove();
+      await axios.delete('/products/cart', { data: { index } });
       window.location.href = '/cart';
     });
   });
@@ -263,7 +260,6 @@ function calculateCartTotals() {
   let total = 0;
   productSums.forEach((productSum) => {
     total = total + Number(productSum.dataset.cartProductSum);
-    console.log(total);
   });
   cartTotal.innerText = `$ ${total}`;
   let subtotal = parseFloat(total / 1.24).toFixed(2);

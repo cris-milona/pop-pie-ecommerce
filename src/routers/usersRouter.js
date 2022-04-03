@@ -8,7 +8,7 @@ const router = new express.Router();
 
 //sign up form
 router.get('/signup', redirectHome, (req, res) => {
-  res.render('signup', { error: null, user: null });
+  res.status(200).render('signup', { error: null, user: null });
 });
 
 //sign up
@@ -19,13 +19,13 @@ router.post('/signup', async (req, res) => {
     req.session.userId = user._id;
     res.status(201).redirect('/');
   } catch (e) {
-    res.render('signup', { error: e, user: null });
+    res.status(503).render('signup', { error: e, user: null });
   }
 });
 
 //sign in form
 router.get('/signin', redirectHome, (req, res) => {
-  res.render('signin', { error: null, user: null });
+  res.status(200).render('signin', { error: null, user: null });
 });
 
 //sign in
@@ -46,7 +46,7 @@ router.post('/signin', async (req, res) => {
     req.session.userId = user._id;
     res.status(200).redirect('/');
   } catch (e) {
-    res.render('signin', { error: e, user: null });
+    res.status(401).render('signin', { error: e, user: null });
   }
 });
 
@@ -55,18 +55,18 @@ router.post('/logout', (req, res) => {
   //destroy on server side
   req.session.destroy((error) => {
     if (error) {
-      return res.redirect('/');
+      return res.status(503).redirect('/');
     }
     //destroy on client side
     res.clearCookie(process.env.SESS_NAME);
-    res.redirect('/signin');
+    res.status(200).redirect('/signin');
   });
 });
 
 //get user's account
-router.get('/user/account', authUser, (req, res) => {});
+// router.get('/user/account', authUser, (req, res) => {});
 
 //delete user's account
-router.delete('/user/delete', authUser, (req, res) => {});
+// router.delete('/user/delete', authUser, (req, res) => {});
 
 module.exports = router;

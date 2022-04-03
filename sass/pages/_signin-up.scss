@@ -1,5 +1,4 @@
 .credentials {
-  min-height: 73vh;
   background-image: linear-gradient(
       to top,
       rgba($color-secondary-dark, 0.3),
@@ -51,6 +50,11 @@
       transform: scale(0.97);
     }
   }
+}
+
+.error-message{
+  color: maroon;
+  font-weight: 600;
 }
 
 //media queries

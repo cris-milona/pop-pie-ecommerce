@@ -28,6 +28,10 @@ body {
   background-color: $color-primary;
 }
 
+main {
+  min-height: 75vh;
+}
+
 img {
   display: block;
   max-width: 100%;

@@ -1,8 +1,7 @@
 .contact {
-  min-height: 73vh;
-  display: grid;
+   display: grid;
   grid-template-columns: repeat(20, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows:  1fr 0.5fr 0.75fr;
 }
 
 .container-heading-box {
