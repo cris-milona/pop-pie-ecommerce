@@ -9,7 +9,7 @@ const authAdmin = async (req, res, next) => {
     req.user = user;
     next();
   } catch (e) {
-    res.send(e);
+    res.sttaus(403).send(e);
   }
 };
 
@@ -19,7 +19,7 @@ const authUser = async (req, res, next) => {
     req.user = user;
     next();
   } catch (e) {
-    res.send(e);
+    res.status(401).send(e);
   }
 };
 
