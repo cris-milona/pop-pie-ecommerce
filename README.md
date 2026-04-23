@@ -1,3 +1,5 @@
+⚠️ This is an early-career project (2021–2022). It is not actively maintained and may contain outdated practices or vulnerabilities. It is preserved for portfolio/history purposes.
+
 # pop-pie-ecommerce
 
 This web-site was created by Christina Milona and Kostas Christou (https://github.com/26fromthebar) and it is a first attempt to put together part of the knowledge we have acquired on front and back end web-development.
